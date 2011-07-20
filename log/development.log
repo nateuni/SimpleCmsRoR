@@ -1,0 +1,369 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/demo/index" for 127.0.0.1 at Mon Jul 18 10:16:06 +1000 2011
+  Processing by DemoController#index as HTML
+Rendered demo/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (0.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.8ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (3.5ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (3.3ms)[0m  [1mdescribe `sections`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `sections`
+  [1m[36mSQL (3.1ms)[0m  [1mdescribe `subjects`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `subjects`
+  [1m[36mSQL (3.3ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (379.9ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (214.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (213.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110718000801')[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (4.2ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.7ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (1.8ms)[0m  DROP TABLE `users`
+  [1m[36mAREL (1.1ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110718000801'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+  [1m[35mSQL (149.7ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(25), `last_name` varchar(50), `email` varchar(255) DEFAULT '' NOT NULL, `password` varchar(40), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110718000801')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+Migrating to AlterUsers (20110718013423)
+  [1m[35mSQL (68.9ms)[0m  RENAME TABLE `users` TO `admin_users`
+  [1m[36mSQL (502.5ms)[0m  [1mALTER TABLE `admin_users` ADD `username` varchar(25)[0m
+  [1m[35mSQL (199.2ms)[0m  ALTER TABLE `admin_users` CHANGE `email` `email` varchar(100) DEFAULT '' NOT NULL
+  [1m[36mSQL (2.6ms)[0m  [1mSHOW COLUMNS FROM `admin_users` LIKE 'password'[0m
+  [1m[35mSQL (204.5ms)[0m  ALTER TABLE `admin_users` CHANGE `password` `hashed_password` varchar(40) DEFAULT NULL
+  [1m[36mSQL (153.6ms)[0m  [1mALTER TABLE `admin_users` ADD `salt` varchar(40)[0m
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+Migrating to AlterUsers (20110718013423)
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (99.5ms)[0m  [1mCREATE INDEX `index_admin_users_on_username` ON `admin_users` (`username`)[0m
+  [1m[35mSQL (90.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110718013423')
+Migrating to CreateSubjects (20110718020009)
+  [1m[36mSQL (72.8ms)[0m  [1mCREATE TABLE `subjects` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `position` int(11), `visible` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110718020009')
+Migrating to CreatePages (20110718020016)
+  [1m[36mSQL (232.8ms)[0m  [1mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(255), `position` int(11), `visible` tinyint(1) DEFAULT 0, `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (1.5ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (111.6ms)[0m  [1mCREATE INDEX `index_pages_on_subject_id` ON `pages` (`subject_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (178.5ms)[0m  [1mCREATE INDEX `index_pages_on_permalink` ON `pages` (`permalink`)[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110718020016')
+Migrating to CreateSections (20110718020022)
+  [1m[36mSQL (159.8ms)[0m  [1mCREATE TABLE `sections` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `position` int(11), `visible` tinyint(1) DEFAULT 0, `content_type` varchar(255), `content` text, `page_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `sections`
+  [1m[36mSQL (215.0ms)[0m  [1mCREATE INDEX `index_sections_on_page_id` ON `sections` (`page_id`)[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110718020022')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (4.8ms)[0m  describe `admin_users`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `admin_users`[0m
+  [1m[35mSQL (3.2ms)[0m  describe `pages`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `pages`[0m
+  [1m[35mSQL (3.8ms)[0m  describe `sections`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `sections`[0m
+  [1m[35mSQL (3.1ms)[0m  describe `subjects`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `subjects`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at Mon Jul 18 18:40:03 +1000 2011
+  Processing by Rails::InfoController#properties as 
+  [1m[36mSQL (36.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Rendered inline template (0.4ms)
+Completed 200 OK in 66ms (Views: 1.5ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/demo/hello" for 127.0.0.1 at Mon Jul 18 18:40:15 +1000 2011
+
+AbstractController::ActionNotFound (The action 'hello' could not be found for DemoController):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/demo/" for 127.0.0.1 at Mon Jul 18 18:40:20 +1000 2011
+  Processing by DemoController#index as HTML
+Rendered demo/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSubject Load (0.4ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mdescribe `subjects`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `subjects` (`position`, `updated_at`, `name`, `visible`, `created_at`) VALUES (1, '2011-07-18 08:52:50', 'Initial Subject', 1, '2011-07-18 08:52:50')
+  [1m[36mSQL (26.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `pages` (`permalink`, `position`, `updated_at`, `subject_id`, `visible`, `created_at`, `name`) VALUES ('first', 1, '2011-07-18 08:53:09', NULL, 0, '2011-07-18 08:53:09', 'First page')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages` WHERE (`pages`.subject_id = 1) LIMIT 1
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE (`pages`.subject_id = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE `pages` SET `updated_at` = '2011-07-18 08:53:30', `subject_id` = 1 WHERE `pages`.`id` = 1[0m
+  [1m[35mSQL (32.6ms)[0m  COMMIT
+  [1m[36mSubject Load (0.6ms)[0m  [1mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mDELETE FROM `pages` WHERE `pages`.`id` = 1[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mPage Load (0.8ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSubject Load (0.4ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE (`pages`.subject_id = 1)[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (3.2ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO `pages` (`position`, `permalink`, `visible`, `subject_id`, `name`, `created_at`, `updated_at`) VALUES (1, 'first', 0, 1, 'First page', '2011-07-18 09:03:09', '2011-07-18 09:03:09')
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `pages` (`position`, `permalink`, `visible`, `subject_id`, `name`, `created_at`, `updated_at`) VALUES (1, 'second', 0, 1, 'Second page', '2011-07-18 09:04:02', '2011-07-18 09:04:02')[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.6ms)[0m  UPDATE `pages` SET `subject_id` = NULL WHERE `pages`.`subject_id` = 1 AND `pages`.`id` IN (3)
+  [1m[36mSQL (377.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+Migrating to AlterUsers (20110718013423)
+Migrating to CreateSubjects (20110718020009)
+Migrating to CreatePages (20110718020016)
+Migrating to CreateSections (20110718020022)
+Migrating to CreateAdminUsersPagesJoin (20110718091542)
+  [1m[35mSQL (87.7ms)[0m  CREATE TABLE `admin_users_pages` (`admin_user_id` int(11), `page_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `admin_users_pages`[0m
+  [1m[35mSQL (294.1ms)[0m  CREATE INDEX `index_admin_users_pages_on_admin_user_id_and_page_id` ON `admin_users_pages` (`admin_user_id`, `page_id`)
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110718091542')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (4.1ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `admin_users_pages`
+  [1m[36mSQL (4.2ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (3.8ms)[0m  [1mdescribe `sections`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `sections`
+  [1m[36mSQL (3.0ms)[0m  [1mdescribe `subjects`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `subjects`
+  [1m[36mSQL (2.9ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (4.2ms)[0m  describe `admin_users_pages`
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT * FROM `admin_users` INNER JOIN `admin_users_pages` ON `admin_users`.id = `admin_users_pages`.admin_user_id WHERE (`admin_users_pages`.page_id = 2 )[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.9ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `admin_users` (`first_name`, `updated_at`, `hashed_password`, `email`, `username`, `last_name`, `created_at`, `salt`) VALUES ('Nathan', '2011-07-18 09:27:55', NULL, '', 'nfst21', 'Sturgess', '2011-07-18 09:27:55', NULL)
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `admin_users_pages` (`admin_user_id`, `page_id`) VALUES (1, 2)[0m
+  [1m[35mSQL (55.7ms)[0m  COMMIT
+  [1m[36mSQL (4.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages`
+  [1m[36mSQL (2.9ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mAdminUser Load (0.4ms)[0m  SELECT `admin_users`.* FROM `admin_users`
+  [1m[36mSQL (2.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m  describe `admin_users_pages`
+  [1m[36mAdminUser Load (0.9ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateAdminUsersPagesJoin (20110718091542)
+  [1m[35mSQL (1.4ms)[0m  DROP TABLE `admin_users_pages`
+  [1m[36mAREL (0.9ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110718091542'[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.9ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (3.3ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (3.9ms)[0m  [1mdescribe `sections`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `sections`
+  [1m[36mSQL (3.8ms)[0m  [1mdescribe `subjects`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `subjects`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+Migrating to CreateUsers (20110718000801)
+Migrating to AlterUsers (20110718013423)
+Migrating to CreateSubjects (20110718020009)
+Migrating to CreatePages (20110718020016)
+Migrating to CreateSections (20110718020022)
+Migrating to CreateAdminUsersPagesJoin (20110718091542)
+  [1m[36mSQL (447.8ms)[0m  [1mCREATE TABLE `admin_users_pages` (`admin_user_id` int(11), `page_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `admin_users_pages`
+  [1m[36mSQL (154.3ms)[0m  [1mCREATE INDEX `index_admin_users_pages_on_admin_user_id_and_page_id` ON `admin_users_pages` (`admin_user_id`, `page_id`)[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110718091542')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.4ms)[0m  describe `admin_users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `admin_users`[0m
+  [1m[35mSQL (2.8ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `admin_users_pages`[0m
+  [1m[35mSQL (3.6ms)[0m  describe `pages`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `pages`[0m
+  [1m[35mSQL (3.8ms)[0m  describe `sections`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `sections`[0m
+  [1m[35mSQL (4.7ms)[0m  describe `subjects`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `subjects`[0m
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (3.1ms)[0m  describe `admin_users`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `admin_users` (`first_name`, `email`, `updated_at`, `hashed_password`, `created_at`, `last_name`, `username`, `salt`) VALUES ('Nathan', '', '2011-07-18 09:47:14', NULL, '2011-07-18 09:47:14', 'Sturgess', 'nfst021', NULL)[0m
+  [1m[35mSQL (2.0ms)[0m  COMMIT
+  [1m[36mSQL (5.2ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (3.4ms)[0m  describe `admin_users_pages`
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `admin_users_pages` (`page_id`, `admin_user_id`) VALUES (2, 1)[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT * FROM `admin_users` INNER JOIN `admin_users_pages` ON `admin_users`.id = `admin_users_pages`.admin_user_id WHERE (`admin_users_pages`.page_id = 2 )[0m
+  [1m[36mSQL (2.9ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (2.9ms)[0m  describe `admin_users_pages`
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT * FROM `pages` INNER JOIN `admin_users_pages` ON `pages`.id = `admin_users_pages`.page_id WHERE (`admin_users_pages`.admin_user_id = 1 )[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 1 LIMIT 1[0m
+  [1m[35mPage Load (1.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 2 LIMIT 1[0m
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT * FROM `admin_users` INNER JOIN `admin_users_pages` ON `admin_users`.id = `admin_users_pages`.admin_user_id WHERE (`admin_users_pages`.page_id = 2 )
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110718000801)
+Migrating to AlterUsers (20110718013423)
+Migrating to CreateSubjects (20110718020009)
+Migrating to CreatePages (20110718020016)
+Migrating to CreateSections (20110718020022)
+Migrating to CreateAdminUsersPagesJoin (20110718091542)
+Migrating to CreateSectionEdits (20110718101252)
+  [1m[35mSQL (273.5ms)[0m  CREATE TABLE `section_edits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `admin_user_id` int(11), `section_id` int(11), `summary` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `section_edits`[0m
+  [1m[35mSQL (153.7ms)[0m  CREATE INDEX `index_section_edits_on_admin_user_id_and_section_id` ON `section_edits` (`admin_user_id`, `section_id`)
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110718101252')[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (4.5ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (2.6ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `admin_users_pages`
+  [1m[36mSQL (3.0ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (3.0ms)[0m  [1mdescribe `section_edits`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `section_edits`
+  [1m[36mSQL (4.5ms)[0m  [1mdescribe `sections`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `sections`
+  [1m[36mSQL (3.2ms)[0m  [1mdescribe `subjects`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `subjects`
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSectionEdit Load (0.5ms)[0m  SELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  describe `sections`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `sections` (`updated_at`, `position`, `visible`, `content`, `page_id`, `name`, `created_at`, `content_type`) VALUES ('2011-07-18 10:24:38', 1, 0, NULL, NULL, 'Section One', '2011-07-18 10:24:38', NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSectionEdit Load (0.5ms)[0m  [1mSELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.section_id = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mdescribe `section_edits`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `section_edits` (`section_id`, `created_at`, `summary`, `updated_at`, `admin_user_id`) VALUES (1, '2011-07-18 10:26:23', 'Test edit', '2011-07-18 10:26:23', NULL)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mAREL (0.9ms)[0m  [1mUPDATE `section_edits` SET `updated_at` = '2011-07-18 10:26:45', `admin_user_id` = 1 WHERE `section_edits`.`id` = 1[0m
+  [1m[35mSQL (1.4ms)[0m  COMMIT
+  [1m[36mSectionEdit Load (0.6ms)[0m  [1mSELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)[0m
+  [1m[35mSectionEdit Load (1.7ms)[0m  SELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)
+  [1m[36mSectionEdit Load (1.7ms)[0m  [1mSELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)[0m
+  [1m[35mSectionEdit Load (0.5ms)[0m  SELECT `section_edits`.* FROM `section_edits` WHERE `section_edits`.`id` = 1 LIMIT 1
+  [1m[36mSectionEdit Load (0.6ms)[0m  [1mSELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `section_edits` (`section_id`, `created_at`, `summary`, `updated_at`, `admin_user_id`) VALUES (1, '2011-07-18 10:34:02', 'Ch-ch-ch-changes', '2011-07-18 10:34:02', 1)[0m
+  [1m[35mSQL (1.6ms)[0m  COMMIT
+  [1m[36mSectionEdit Load (0.7ms)[0m  [1mSELECT `section_edits`.* FROM `section_edits`[0m
+  [1m[35mSectionEdit Load (1.5ms)[0m  SELECT `section_edits`.* FROM `section_edits` WHERE (`section_edits`.admin_user_id = 1)
