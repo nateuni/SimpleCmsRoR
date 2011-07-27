@@ -3298,3 +3298,207 @@ Started GET "/subjects/list" for 127.0.0.1 at Sat Jul 23 10:53:22 +1000 2011
   [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
 Rendered subjects/list.html.erb within layouts/admin (53.8ms)
 Completed 200 OK in 153ms (Views: 52.3ms | ActiveRecord: 5.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/subjects" for 127.0.0.1 at Tue Jul 26 19:30:01 +1000 2011
+  Processing by SubjectsController#index as HTML
+  [1m[36mSQL (62.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSubject Load (1.2ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (34.0ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
+Rendered subjects/list.html.erb within layouts/admin (117.8ms)
+Completed 200 OK in 412ms (Views: 106.6ms | ActiveRecord: 101.0ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at Tue Jul 26 19:31:46 +1000 2011
+  Processing by SubjectsController#index as HTML
+  [1m[35mSubject Load (0.5ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (3.5ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
+Rendered subjects/list.html.erb within layouts/admin (52.3ms)
+Completed 200 OK in 143ms (Views: 50.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/subjects/show/1" for 127.0.0.1 at Tue Jul 26 19:32:04 +1000 2011
+  Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubject Load (0.4ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+Rendered subjects/show.html.erb within layouts/admin (73.0ms)
+Completed 200 OK in 113ms (Views: 98.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 19:32:06 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[36mSubject Load (0.5ms)[0m  [1mSELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC[0m
+  [1m[35mSQL (3.0ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)[0m
+  [1m[35mSQL (1.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)
+Rendered subjects/list.html.erb within layouts/admin (56.7ms)
+Completed 200 OK in 74ms (Views: 54.1ms | ActiveRecord: 6.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 19:32:32 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSubject Load (0.5ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (3.6ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
+Rendered subjects/list.html.erb within layouts/admin (64.7ms)
+Completed 200 OK in 186ms (Views: 62.9ms | ActiveRecord: 7.0ms)
+  [1m[36mSQL (2.7ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` ORDER BY page.position ASC
+Mysql2::Error: Unknown column 'page.position' in 'order clause': SELECT `pages`.* FROM `pages` ORDER BY page.position ASC
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` ORDER BY page.position ASC[0m
+Mysql2::Error: Unknown column 'page.position' in 'order clause': SELECT `pages`.* FROM `pages` ORDER BY page.position ASC
+  [1m[35mPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages` ORDER BY pages.position ASC
+
+
+Started GET "/subjects/edit/1" for 127.0.0.1 at Tue Jul 26 19:46:51 +1000 2011
+  Processing by SubjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubject Load (0.4ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+Rendered subjects/_form.html.erb (1.0ms)
+Rendered subjects/edit.html.erb within layouts/admin (15.0ms)
+Completed 200 OK in 103ms (Views: 19.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 19:46:54 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC[0m
+  [1m[35mSQL (2.7ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)
+Rendered subjects/list.html.erb within layouts/admin (50.3ms)
+Completed 200 OK in 66ms (Views: 49.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/subjects/show/1" for 127.0.0.1 at Tue Jul 26 19:46:55 +1000 2011
+  Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+Rendered subjects/show.html.erb within layouts/admin (15.6ms)
+Completed 200 OK in 34ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 19:46:56 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[35mSubject Load (0.4ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
+Rendered subjects/list.html.erb within layouts/admin (49.4ms)
+Completed 200 OK in 65ms (Views: 48.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/subjects/edit/1" for 127.0.0.1 at Tue Jul 26 19:54:22 +1000 2011
+  Processing by SubjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubject Load (0.3ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+Rendered subjects/_form.html.erb (1.3ms)
+Rendered subjects/edit.html.erb within layouts/admin (15.3ms)
+Completed 200 OK in 34ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/subjects/update/1" for 127.0.0.1 at Tue Jul 26 20:05:15 +1000 2011
+  Processing by SubjectsController#update as HTML
+  Parameters: {"commit"=>"Save Changes", "authenticity_token"=>"kre6EGiPppMSSphu784UT8W45t3Uv6tj1kGEy5xz0Ms=", "utf8"=>"✓", "subject"=>{"name"=>"Initial.. Subject", "position"=>"1", "visible"=>"1"}, "id"=>"1"}
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (1.2ms)[0m  [1mUPDATE `subjects` SET `name` = 'Initial.. Subject', `updated_at` = '2011-07-26 10:05:15' WHERE `subjects`.`id` = 1[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/subjects/show/1
+Completed 302 Found in 178ms
+
+
+Started GET "/subjects/show/1" for 127.0.0.1 at Tue Jul 26 20:05:16 +1000 2011
+  Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+Rendered subjects/show.html.erb within layouts/admin (11.9ms)
+Completed 200 OK in 30ms (Views: 16.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 20:05:17 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[35mSubject Load (0.7ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (3.0ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)[0m
+Rendered subjects/list.html.erb within layouts/admin (49.7ms)
+Completed 200 OK in 65ms (Views: 48.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/subjects/edit/1" for 127.0.0.1 at Tue Jul 26 20:05:35 +1000 2011
+  Processing by SubjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubject Load (0.5ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+Rendered subjects/_form.html.erb (1.3ms)
+Rendered subjects/edit.html.erb within layouts/admin (15.4ms)
+Completed 200 OK in 107ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/subjects/update/1" for 127.0.0.1 at Tue Jul 26 20:05:39 +1000 2011
+  Processing by SubjectsController#update as HTML
+  Parameters: {"commit"=>"Save Changes", "authenticity_token"=>"kre6EGiPppMSSphu784UT8W45t3Uv6tj1kGEy5xz0Ms=", "utf8"=>"✓", "subject"=>{"name"=>"Initial.. Subject", "position"=>"1", "visible"=>"1"}, "id"=>"1"}
+  [1m[36mSubject Load (0.4ms)[0m  [1mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/subjects/show/1
+Completed 302 Found in 23ms
+
+
+Started GET "/subjects/show/1" for 127.0.0.1 at Tue Jul 26 20:05:39 +1000 2011
+  Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSubject Load (0.3ms)[0m  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+Rendered subjects/show.html.erb within layouts/admin (11.8ms)
+Completed 200 OK in 29ms (Views: 16.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/subjects/list" for 127.0.0.1 at Tue Jul 26 20:12:40 +1000 2011
+  Processing by SubjectsController#list as HTML
+  [1m[36mSubject Load (0.6ms)[0m  [1mSELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC[0m
+  [1m[35mSQL (3.0ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 2)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 3)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 4)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 5)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `pages` WHERE (`pages`.subject_id = 14)
+Rendered subjects/list.html.erb within layouts/admin (129.7ms)
+Completed 200 OK in 145ms (Views: 128.2ms | ActiveRecord: 5.4ms)
