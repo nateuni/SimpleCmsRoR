@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  # this tells rails to use the admin layout!
   layout 'admin'
   
   def index

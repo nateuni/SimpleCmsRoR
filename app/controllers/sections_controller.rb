@@ -1,22 +1,10 @@
 class SectionsController < ApplicationController
+
   layout 'admin'
   
   def index
     list
     render('list')
-  end
-  
-  def new
-     @section = Section.new(:name => "default")
-  end
-  
-  def create
-    @page = @Page.new
-    if @page.save
-      flash[:notice] = "Section created"
-      redirect_to(:action => 'list')
-    else
-      render('new')  
   end
   
   def list
@@ -27,18 +15,32 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
   end
   
+  def new
+    @section = Section.new
+  end
+  
+  def create
+    @section = Section.new(params[:section])
+    if @section.save
+      flash[:notice] = "Section created."
+      redirect_to(:action => 'list')
+    else
+      render('new')
+    end
+  end
+  
   def edit
     @section = Section.find(params[:id])
   end
   
   def update
     @section = Section.find(params[:id])
-    if @section.save
-      flash[:notice] = "Section updated"
-      redirect_to(:action => 'show' :id => @section.id)
+    if @section.update_attributes(params[:section])
+      flash[:notice] = "Section updated."
+      redirect_to(:action => 'show', :id => @section.id)
     else
       render('edit')
-    end  
+    end
   end
   
   def delete
@@ -47,8 +49,8 @@ class SectionsController < ApplicationController
   
   def destroy
     Section.find(params[:id]).destroy
-    flash[:notice] = "Section destroyed"
+    flash[:notice] = "Section destroyed."
     redirect_to(:action => 'list')
   end
-  
+    
 end
