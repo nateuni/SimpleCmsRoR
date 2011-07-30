@@ -15,7 +15,7 @@
     <tr>
       <td><%= page.position %></td>
       <td><%= page.name %></td>
-      <td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
+      <td class="center"><%= status_tag(page.visible) %></td>
       <td class="center"><%= page.sections.size %></td>
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => page.id}, :class => 'action show') %>

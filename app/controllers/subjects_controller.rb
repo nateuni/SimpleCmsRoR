@@ -2,6 +2,8 @@ class SubjectsController < ApplicationController
   
   layout 'admin'
   
+  before_filter :confirm_logged_in, :only => [:index, :menu]
+   
   def index
     list
     render('list')

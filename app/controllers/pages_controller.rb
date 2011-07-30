@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   # this tells rails to use the admin layout!
   layout 'admin'
   
+  before_filter :confirm_logged_in, :only => [:index, :menu]
+  
   def index
     list
     render('list')
