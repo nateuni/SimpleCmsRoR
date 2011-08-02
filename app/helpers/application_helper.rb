@@ -13,5 +13,9 @@ module ApplicationHelper
     end
   end
   
+  def error_meesages_for( object )
+    render(:partial => 'shared/error_messages', :locals => {:object => object})
+  end  
+  
   
 end

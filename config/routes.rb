@@ -1,4 +1,12 @@
 SimpleCms::Application.routes.draw do
+  get "admin_users/list"
+
+  get "admin_users/new"
+
+  get "admin_users/edit"
+
+  get "admin_users/delete"
+
   get "access/menu"
 
   get "access/login"

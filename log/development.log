@@ -5739,3 +5739,1326 @@ Started GET "/access/menu" for 127.0.0.1 at Fri Jul 29 22:56:17 +1000 2011
   Processing by AccessController#menu as HTML
 Rendered access/menu.html.erb within layouts/admin (2.0ms)
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:48:42 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (11.2ms)[0m  describe `admin_users_pages`
+Rendered admin_users/list.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 48ms (Views: 27.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/admin_user" for 127.0.0.1 at Sat Jul 30 18:48:45 +1000 2011
+
+ActionController::RoutingError (No route matches "/admin_user"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/admin_user" for 127.0.0.1 at Sat Jul 30 18:49:08 +1000 2011
+
+ActionController::RoutingError (No route matches "/admin_user"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:49:13 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+ERROR: compiling _app_views_admin_users_list_html_erb__601378229_2191938040_0 RAISED compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_admin_users_list_html_erb__601378229_2191938040_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin_users/list";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; @page_title = 'Admin Users List' 
+@output_buffer.safe_concat('
+<div class="users list"> 
+	<h2>Admin Users</h2>
+	
+	');@output_buffer.append= ( link_to('Add New Admin User', {:action => "new"}, :class =>'action new') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	<div>');@output_buffer.append= ( pluralize(@admin_users.size, 'admin user') );@output_buffer.safe_concat(' found</div>
+	
+	<table class="listing" summary="Admin users list">
+		<tr>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>	
+');@output_buffer.append_if_string= 		 @admin_users.each do |admin_user| 
+@output_buffer.safe_concat('		<tr class="');@output_buffer.append= ( cycle('odd', 'even') );@output_buffer.safe_concat('">
+			<td>');@output_buffer.append= ( admin_user.username );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.name );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( mail_to(admin_user.email) );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.actions );@output_buffer.safe_concat('</td>
+		</tr>	
+	
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/controllers/admin_users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__306831612__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin_users/list.html.erb within layouts/admin (15.0ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND):
+    23: 		</tr>	
+    24: 	
+    25: </div>
+  app/views/admin_users/list.html.erb:28:in `compile'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:55:57 +1000 2011
+  Processing by AdminUsersController#index as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms
+
+
+Started GET "/access/login" for 127.0.0.1 at Sat Jul 30 18:55:57 +1000 2011
+  Processing by AccessController#login as HTML
+Rendered access/login.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at Sat Jul 30 18:56:15 +1000 2011
+  Processing by AccessController#attempt_login as HTML
+  Parameters: {"commit"=>"Log In", "username"=>"johndoe0", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "password"=>"[FILTERED]"}
+  [1m[36mSQL (35.0ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (40.4ms)[0m  SHOW TABLES
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'johndoe0' LIMIT 1[0m
+Redirected to http://localhost:3000/access/menu
+Completed 302 Found in 200ms
+
+
+Started GET "/access/menu" for 127.0.0.1 at Sat Jul 30 18:56:16 +1000 2011
+  Processing by AccessController#menu as HTML
+Rendered access/menu.html.erb within layouts/admin (2.0ms)
+Completed 200 OK in 23ms (Views: 23.2ms | ActiveRecord: 75.7ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:56:36 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (76.9ms)[0m  describe `admin_users_pages`
+ERROR: compiling _app_views_admin_users_list_html_erb__601378229_2232249880_0 RAISED compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_admin_users_list_html_erb__601378229_2232249880_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin_users/list";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; @page_title = 'Admin Users List' 
+@output_buffer.safe_concat('
+<div class="users list"> 
+	<h2>Admin Users</h2>
+	
+	');@output_buffer.append= ( link_to('Add New Admin User', {:action => "new"}, :class =>'action new') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	<div>');@output_buffer.append= ( pluralize(@admin_users.size, 'admin user') );@output_buffer.safe_concat(' found</div>
+	
+	<table class="listing" summary="Admin users list">
+		<tr>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>	
+');@output_buffer.append_if_string= 		 @admin_users.each do |admin_user| 
+@output_buffer.safe_concat('		<tr class="');@output_buffer.append= ( cycle('odd', 'even') );@output_buffer.safe_concat('">
+			<td>');@output_buffer.append= ( admin_user.username );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.name );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( mail_to(admin_user.email) );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.actions );@output_buffer.safe_concat('</td>
+		</tr>	
+	
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/controllers/admin_users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__306831612__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin_users/list.html.erb within layouts/admin (106.7ms)
+Completed 500 Internal Server Error in 195ms
+
+ActionView::Template::Error (compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND):
+    23: 		</tr>	
+    24: 	
+    25: </div>
+  app/views/admin_users/list.html.erb:28:in `compile'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (172.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (205.7ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:57:13 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.9ms)[0m  describe `admin_users_pages`
+ERROR: compiling _app_views_admin_users_list_html_erb__601378229_2233242600_0 RAISED compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:27: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_admin_users_list_html_erb__601378229_2233242600_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin_users/list";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; @page_title = 'Admin Users List' 
+@output_buffer.safe_concat('
+<div class="users list"> 
+	<h2>Admin Users</h2>
+	
+	');@output_buffer.append= ( link_to('Add New Admin User', {:action => "new"}, :class =>'action new') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	<div>');@output_buffer.append= ( pluralize(@admin_users.size, 'admin user') );@output_buffer.safe_concat(' found</div>
+	
+	<table class="listing" summary="Admin users list">
+		<tr>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>	
+');@output_buffer.append_if_string= 		 @admin_users.each do |admin_user| 
+@output_buffer.safe_concat('		<tr class="');@output_buffer.append= ( cycle('odd', 'even') );@output_buffer.safe_concat('">
+			<td>');@output_buffer.append= ( admin_user.username );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.name );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( mail_to(admin_user.email) );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.actions );@output_buffer.safe_concat('</td>
+		</tr>	
+	</table>	
+	
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/controllers/admin_users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__306831612__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin_users/list.html.erb within layouts/admin (0.5ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:27: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29: syntax error, unexpected $end, expecting kEND):
+    24: 	</table>	
+    25: 	
+    26: </div>
+  app/views/admin_users/list.html.erb:29:in `compile'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.5ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:57:15 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.2ms)[0m  describe `admin_users_pages`
+ERROR: compiling _app_views_admin_users_list_html_erb__601378229_2231891360_0 RAISED compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:27: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_admin_users_list_html_erb__601378229_2231891360_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin_users/list";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; @page_title = 'Admin Users List' 
+@output_buffer.safe_concat('
+<div class="users list"> 
+	<h2>Admin Users</h2>
+	
+	');@output_buffer.append= ( link_to('Add New Admin User', {:action => "new"}, :class =>'action new') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	<div>');@output_buffer.append= ( pluralize(@admin_users.size, 'admin user') );@output_buffer.safe_concat(' found</div>
+	
+	<table class="listing" summary="Admin users list">
+		<tr>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>	
+');@output_buffer.append_if_string= 		 @admin_users.each do |admin_user| 
+@output_buffer.safe_concat('		<tr class="');@output_buffer.append= ( cycle('odd', 'even') );@output_buffer.safe_concat('">
+			<td>');@output_buffer.append= ( admin_user.username );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.name );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( mail_to(admin_user.email) );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.actions );@output_buffer.safe_concat('</td>
+		</tr>	
+	</table>	
+	
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/controllers/admin_users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__306831612__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin_users/list.html.erb within layouts/admin (0.5ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:27: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:29: syntax error, unexpected $end, expecting kEND):
+    24: 	</table>	
+    25: 	
+    26: </div>
+  app/views/admin_users/list.html.erb:29:in `compile'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.0ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:58:04 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (10.2ms)[0m  describe `admin_users_pages`
+ERROR: compiling _app_views_admin_users_list_html_erb__601378229_2233013880_0 RAISED compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_admin_users_list_html_erb__601378229_2233013880_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin_users/list";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; @page_title = 'Admin Users List' 
+@output_buffer.safe_concat('
+<div class="users list"> 
+	<h2>Admin Users</h2>
+	
+	');@output_buffer.append= ( link_to('Add New Admin User', {:action => "new"}, :class =>'action new') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	
+	<div>');@output_buffer.append= ( pluralize(@admin_users.size, 'admin user') );@output_buffer.safe_concat(' found</div>
+	
+	<table class="listing" summary="Admin users list">
+		<tr>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>	
+');@output_buffer.append_if_string= 		 @admin_users.each do |admin_user| 
+@output_buffer.safe_concat('		<tr class="');@output_buffer.append= ( cycle('odd', 'even') );@output_buffer.safe_concat('">
+			<td>');@output_buffer.append= ( admin_user.username );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.name );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( mail_to(admin_user.email) );@output_buffer.safe_concat('</td>
+			<td>');@output_buffer.append= ( admin_user.actions );@output_buffer.safe_concat('</td>
+		</tr>	
+	</table>	
+</div>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/controllers/admin_users_controller.rb:9:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__306831612__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin_users/list.html.erb within layouts/admin (0.5ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (compile error
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:26: syntax error, unexpected kENSURE, expecting kEND
+/Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/list.html.erb:28: syntax error, unexpected $end, expecting kEND):
+    23: 		</tr>	
+    24: 	</table>	
+    25: </div>
+  app/views/admin_users/list.html.erb:28:in `compile'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:59:28 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (33.5ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined method `actions' for #<AdminUser:0x10a070390>):
+    19: 			<td><%= admin_user.username %></td>
+    20: 			<td><%= admin_user.name %></td>
+    21: 			<td><%= mail_to(admin_user.email) %></td>
+    22: 			<td><%= admin_user.actions %></td>
+    23: 		</tr>	
+    24: 		<% end %>
+    25: 	</table>	
+  app/views/admin_users/list.html.erb:22:in `_app_views_admin_users_list_html_erb__601378229_2231628600_0'
+  app/views/admin_users/list.html.erb:17:in `_app_views_admin_users_list_html_erb__601378229_2231628600_0'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:59:29 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (6.6ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined method `actions' for #<AdminUser:0x10a1d1450>):
+    19: 			<td><%= admin_user.username %></td>
+    20: 			<td><%= admin_user.name %></td>
+    21: 			<td><%= mail_to(admin_user.email) %></td>
+    22: 			<td><%= admin_user.actions %></td>
+    23: 		</tr>	
+    24: 		<% end %>
+    25: 	</table>	
+  app/views/admin_users/list.html.erb:22:in `_app_views_admin_users_list_html_erb__601378229_2232358580_0'
+  app/views/admin_users/list.html.erb:17:in `_app_views_admin_users_list_html_erb__601378229_2232358580_0'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 18:59:52 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.2ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (7.2ms)
+Completed 200 OK in 49ms (Views: 8.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 19:07:16 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (10.4ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined local variable or method `admin_user_id' for #<#<Class:0x10a1b33b0>:0x10a1b0728>):
+    20: 			<td><%= admin_user.name %></td>
+    21: 			<td><%= mail_to(admin_user.email) %></td>
+    22: 			<td class ="actions">
+    23: 				<%= link_to("Edit", {:action => 'edit', :id => admin_user_id}, :class => 'action edit') %>
+    24: 				<%= link_to("Delete", {:action => 'delete', :id => admin_user_id}, :class => 'action delete') %>
+    25: 			</td>
+    26: 		</tr>	
+  app/views/admin_users/list.html.erb:23:in `_app_views_admin_users_list_html_erb__601378229_2232249980_0'
+  app/views/admin_users/list.html.erb:17:in `_app_views_admin_users_list_html_erb__601378229_2232249980_0'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.9ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 19:07:17 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (9.6ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `admin_user_id' for #<#<Class:0x10a2c4e48>:0x10a2c31b0>):
+    20: 			<td><%= admin_user.name %></td>
+    21: 			<td><%= mail_to(admin_user.email) %></td>
+    22: 			<td class ="actions">
+    23: 				<%= link_to("Edit", {:action => 'edit', :id => admin_user_id}, :class => 'action edit') %>
+    24: 				<%= link_to("Delete", {:action => 'delete', :id => admin_user_id}, :class => 'action delete') %>
+    25: 			</td>
+    26: 		</tr>	
+  app/views/admin_users/list.html.erb:23:in `_app_views_admin_users_list_html_erb__601378229_2232814360_0'
+  app/views/admin_users/list.html.erb:17:in `_app_views_admin_users_list_html_erb__601378229_2232814360_0'
+  app/controllers/admin_users_controller.rb:9:in `index'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.0ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 19:07:37 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (7.8ms)
+Completed 200 OK in 48ms (Views: 9.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin_users" for 127.0.0.1 at Sat Jul 30 19:15:49 +1000 2011
+  Processing by AdminUsersController#index as HTML
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (7.5ms)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:15:53 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+DEPRECATION WARNING: error_messages_for was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from _app_views_admin_users__form_html_erb__499879190_2232895340_689100 at /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/_form.html.erb:1)
+Rendered admin_users/_form.html.erb (88.8ms)
+Rendered admin_users/new.html.erb within layouts/admin (91.8ms)
+Completed 200 OK in 107ms (Views: 93.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:17:15 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[35mSQL (2.5ms)[0m  describe `admin_users_pages`
+DEPRECATION WARNING: error_messages_for was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from _app_views_admin_users__form_html_erb__499879190_2233560540_689100 at /Users/nathansturgess/Sites/SimpleCmsRoR/app/views/admin_users/_form.html.erb:1)
+Rendered admin_users/_form.html.erb (5.5ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.2ms)
+Completed 200 OK in 47ms (Views: 33.8ms | ActiveRecord: 2.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/nathansturgess/Sites/SimpleCmsRoR/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:19:35 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `admin_users_pages`[0m
+Rendered admin_users/_form.html.erb (9.6ms)
+Rendered admin_users/new.html.erb within layouts/admin (12.6ms)
+Completed 200 OK in 69ms (Views: 14.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:19:42 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"", "last_name"=>"", "password"=>"[FILTERED]", "first_name"=>"", "email"=>""}}
+  [1m[35mSQL (1.2ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (8.0ms)
+Rendered admin_users/new.html.erb within layouts/admin (10.7ms)
+Completed 200 OK in 77ms (Views: 12.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:20:16 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"", "last_name"=>"Sturgess", "password"=>"[FILTERED]", "first_name"=>"Nathan", "email"=>"nate@nate.com"}}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (7.6ms)
+Rendered admin_users/new.html.erb within layouts/admin (37.7ms)
+Completed 200 OK in 64ms (Views: 39.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:21:07 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"natestur", "last_name"=>"Sturgess", "password"=>"[FILTERED]", "first_name"=>"Nathan", "email"=>"nate@nate.com"}}
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (7.6ms)
+Rendered admin_users/new.html.erb within layouts/admin (10.3ms)
+Completed 200 OK in 37ms (Views: 12.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:21:12 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"", "last_name"=>"", "password"=>"[FILTERED]", "first_name"=>"", "email"=>""}}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (7.5ms)
+Rendered admin_users/new.html.erb within layouts/admin (10.5ms)
+Completed 200 OK in 64ms (Views: 12.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:21:15 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (7.9ms)
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:21:16 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+Rendered admin_users/_form.html.erb (5.7ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.6ms)
+Completed 200 OK in 52ms (Views: 10.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:21:43 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"nate1234", "last_name"=>"Sturgesss", "password"=>"[FILTERED]", "first_name"=>"Nate", "email"=>"nate@nate.com"}}
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (7.3ms)
+Rendered admin_users/new.html.erb within layouts/admin (9.9ms)
+Completed 200 OK in 35ms (Views: 11.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:21:47 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (7.8ms)
+Completed 200 OK in 49ms (Views: 9.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:21:50 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (7.5ms)
+Completed 200 OK in 21ms (Views: 9.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:22:57 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+Rendered admin_users/_form.html.erb (5.5ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.5ms)
+Completed 200 OK in 23ms (Views: 10.2ms | ActiveRecord: 1.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/nathansturgess/Sites/SimpleCmsRoR/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'natenate') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `admin_users` (`salt`, `hashed_password`, `created_at`, `username`, `last_name`, `first_name`, `updated_at`, `email`) VALUES ('b820c10c0b5c42f1d0123f410460578028cdac2d', '927c24490141f61c0980fb8456313f5fc8c53da1', '2011-07-30 09:29:13', 'natenate', 'Nate', 'Nate', '2011-07-30 09:29:13', 'nate@nate.com')
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:29:19 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (8.0ms)
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:31:52 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+Rendered admin_users/_form.html.erb (5.4ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.2ms)
+Completed 200 OK in 53ms (Views: 10.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:32:13 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"dudedude", "last_name"=>"Dude", "password"=>"[FILTERED]", "first_name"=>"Dude", "email"=>"dude@dude.com"}}
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'dudedude') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `admin_users` (`email`, `hashed_password`, `updated_at`, `created_at`, `salt`, `username`, `first_name`, `last_name`) VALUES ('dude@dude.com', '6b162951a8bb901a3aba11451aee1f7497ec8f47', '2011-07-30 09:32:13', '2011-07-30 09:32:13', '75d019e7b82ea64a20e187dae79037164aaf3074', 'dudedude', 'Dude', 'Dude')
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin_users/list
+Completed 302 Found in 25ms
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:32:13 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[35mSQL (1.5ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (8.7ms)
+Completed 200 OK in 52ms (Views: 10.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:32:16 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `admin_users_pages`[0m
+Rendered admin_users/_form.html.erb (5.4ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.2ms)
+Completed 200 OK in 24ms (Views: 10.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:32:40 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"johndoe0", "last_name"=>"Doe", "password"=>"[FILTERED]", "first_name"=>"John", "email"=>"john@john.com"}}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'johndoe0') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (3.7ms)
+Rendered admin_users/new.html.erb within layouts/admin (35.8ms)
+Completed 200 OK in 57ms (Views: 37.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:35:13 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"johndoe1", "last_name"=>"Doe", "password"=>"[FILTERED]", "first_name"=>"John", "email"=>"john@john.com"}}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'johndoe1') LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `admin_users` (`last_name`, `updated_at`, `hashed_password`, `username`, `salt`, `first_name`, `email`, `created_at`) VALUES ('Doe', '2011-07-30 09:35:13', 'c180f7709fe26ae1319d4757415e7be9ba636976', 'johndoe1', '4d79e1cbdfec7240d14e699ebe655a2fd8295548', 'John', 'john@john.com', '2011-07-30 09:35:13')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin_users/list
+Completed 302 Found in 23ms
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:35:13 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (8.8ms)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admin_users/new" for 127.0.0.1 at Sat Jul 30 19:36:08 +1000 2011
+  Processing by AdminUsersController#new as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+Rendered admin_users/_form.html.erb (5.6ms)
+Rendered admin_users/new.html.erb within layouts/admin (8.4ms)
+Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:36:36 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"johndoe0", "last_name"=>"Test", "password"=>"[FILTERED]", "first_name"=>"Test", "email"=>"test@test.com"}}
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'johndoe0') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (3.6ms)
+Rendered admin_users/new.html.erb within layouts/admin (6.6ms)
+Completed 200 OK in 27ms (Views: 8.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:37:21 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"johndoe0", "last_name"=>"Test", "password"=>"[FILTERED]", "first_name"=>"Test", "email"=>"test@test.com"}}
+  [1m[35mSQL (1.5ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'johndoe0') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (3.5ms)
+Rendered admin_users/new.html.erb within layouts/admin (6.3ms)
+Completed 200 OK in 26ms (Views: 7.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:37:25 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"johndoe0", "last_name"=>"Test", "password"=>"[FILTERED]", "first_name"=>"Test", "email"=>"test@test.com"}}
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'johndoe0') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered admin_users/_form.html.erb (4.2ms)
+Rendered admin_users/new.html.erb within layouts/admin (6.9ms)
+Completed 200 OK in 28ms (Views: 8.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/admin_users/create" for 127.0.0.1 at Sat Jul 30 19:37:48 +1000 2011
+  Processing by AdminUsersController#create as HTML
+  Parameters: {"commit"=>"Create Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "admin_user"=>{"username"=>"testtest", "last_name"=>"Test", "password"=>"[FILTERED]", "first_name"=>"Test", "email"=>"test@test.com"}}
+  [1m[35mSQL (1.4ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'testtest') LIMIT 1
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `admin_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `admin_users` (`username`, `first_name`, `created_at`, `email`, `last_name`, `salt`, `hashed_password`, `updated_at`) VALUES ('testtest', 'Test', '2011-07-30 09:37:48', 'test@test.com', 'Test', 'd340765f8ce66e23f725f78ea9f88a5988b2ea1f', '3d2edbcf3e11c78b80629bd230bd4bfb4480ea9e', '2011-07-30 09:37:48')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin_users/list
+Completed 302 Found in 24ms
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:37:48 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[35mSQL (1.9ms)[0m  describe `admin_users_pages`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `admin_users`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC
+Rendered admin_users/list.html.erb within layouts/admin (9.2ms)
+Completed 200 OK in 22ms (Views: 10.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/admin_users/edit?id=1" for 127.0.0.1 at Sat Jul 30 19:38:30 +1000 2011
+  Processing by AdminUsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+Rendered admin_users/_form.html.erb (3.0ms)
+Rendered admin_users/edit.html.erb within layouts/admin (10.9ms)
+Completed 200 OK in 58ms (Views: 12.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:38:33 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[36mSQL (38.2ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (45.5ms)
+Completed 200 OK in 95ms (Views: 46.9ms | ActiveRecord: 38.6ms)
+
+
+Started GET "/admin_users/delete?id=5" for 127.0.0.1 at Sat Jul 30 19:38:39 +1000 2011
+  Processing by AdminUsersController#delete as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 5 LIMIT 1[0m
+Rendered admin_users/delete.html.erb within layouts/admin (36.8ms)
+Completed 200 OK in 52ms (Views: 38.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/admin_users/destroy/5" for 127.0.0.1 at Sat Jul 30 19:38:41 +1000 2011
+  Processing by AdminUsersController#destroy as HTML
+  Parameters: {"commit"=>"Delete Admin User", "authenticity_token"=>"yKns2lHHVfp3bcjMjIBw2ezUmeS6iwthBv6lNQwZLuM=", "utf8"=>"\342\234\223", "id"=>"5"}
+  [1m[35mSQL (1.3ms)[0m  describe `admin_users_pages`
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `admin_users` WHERE `admin_users`.`id` = 5[0m
+  [1m[35mSQL (1.5ms)[0m  describe `admin_users_pages`
+  [1m[36mPage Load (12.5ms)[0m  [1mSELECT * FROM `pages` INNER JOIN `admin_users_pages` ON `pages`.id = `admin_users_pages`.page_id WHERE (`admin_users_pages`.admin_user_id = 5 )[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin_users/list
+Completed 302 Found in 74ms
+
+
+Started GET "/admin_users/list" for 127.0.0.1 at Sat Jul 30 19:38:41 +1000 2011
+  Processing by AdminUsersController#list as HTML
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `admin_users`
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` ORDER BY admin_users.last_name ASC, admin_users.first_name ASC[0m
+Rendered admin_users/list.html.erb within layouts/admin (39.0ms)
+Completed 200 OK in 51ms (Views: 40.3ms | ActiveRecord: 18.1ms)
